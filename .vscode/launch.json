@@ -34,6 +34,19 @@
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch OPSandCONDS",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build3",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/OperatorsAndConditionals/bin/Debug/net7.0/OperatorsAndConditionals.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/OperatorsAndConditionals",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "internalConsole",
+            "stopAtEntry": false
         }
     ]
 }
