@@ -28,3 +28,18 @@ C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\HelloWorld\bin\Debug\net7.0\H
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\HelloWorld\bin\Debug\net7.0\HelloWorld.pdb
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\HelloWorld\obj\Debug\net7.0\HelloWorld.genruntimeconfig.cache
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\HelloWorld\obj\Debug\net7.0\ref\HelloWorld.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\bin\Debug\net7.0\HelloWorld.exe
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\bin\Debug\net7.0\HelloWorld.deps.json
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\bin\Debug\net7.0\HelloWorld.runtimeconfig.json
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\bin\Debug\net7.0\HelloWorld.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\bin\Debug\net7.0\HelloWorld.pdb
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.csproj.AssemblyReference.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.AssemblyInfoInputs.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.AssemblyInfo.cs
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\refint\HelloWorld.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.pdb
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\HelloWorld.genruntimeconfig.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\HelloWorld\obj\Debug\net7.0\ref\HelloWorld.dll

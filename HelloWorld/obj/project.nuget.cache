@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3j5A6GteVMfQwYld2w3kzQkp85vwdjuM8XP9n2x6uiKsMQYZQGuOC3ucxe+TJj+N6OtFjFIqEJqVdw7m3mBTug==",
+  "dgSpecHash": "pUBkRUatkjnnBsvMOkPef8yPeFLAvc2RVWtDZeNp4t1jV8pFkiZEqLgEEm1O3lZbcOyn2Biz0YRZpfgYLHbh5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\HelloWorld\\HelloWorld.csproj",
+  "projectFilePath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\C# Crash Course\\HelloWorld\\HelloWorld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

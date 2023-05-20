@@ -1,4 +1,6 @@
-﻿namespace DataStructures
+﻿using System;
+
+namespace DataStructures
 {
     internal class Program
     {
@@ -7,7 +9,13 @@
             string[] myGroceryArray = new string[2];
             myGroceryArray[0] = "Apples";
             myGroceryArray[1] = "Baguettes";
-            System.Console.WriteLine(myGroceryArray);
+            Console.WriteLine(myGroceryArray);
+
+            myGroceryArray.Append("Bonus Grocery");
+            foreach (string grocery in myGroceryArray)
+            {
+                Console.WriteLine(grocery);
+            }
         }
     }
 }

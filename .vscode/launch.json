@@ -8,11 +8,11 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build1",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/net7.0/HelloWorld.dll",
+            "program": "${workspaceFolder}/DataStructures/bin/Debug/net7.0/DataStructures.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/DataStructures",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
@@ -20,7 +20,20 @@
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
-            "request": "attach"
+            "request": "attach",
+        },
+        {
+            "name": ".NET Core Launch HELLO WORLD",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build2",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/HelloWorld/bin/Debug/net7.0/HelloWorld.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/HelloWorld",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "internalConsole",
+            "stopAtEntry": false
         }
     ]
 }

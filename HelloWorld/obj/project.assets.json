@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\HelloWorld\\HelloWorld.csproj",
+      "projectUniqueName": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\C# Crash Course\\HelloWorld\\HelloWorld.csproj",
       "projectName": "HelloWorld",
-      "projectPath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\HelloWorld\\HelloWorld.csproj",
+      "projectPath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\C# Crash Course\\HelloWorld\\HelloWorld.csproj",
       "packagesPath": "C:\\Users\\mikew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\HelloWorld\\obj\\",
+      "outputPath": "C:\\Users\\mikew\\Documents\\Coding\\C# and .NET\\COURSE\\C# Crash Course\\HelloWorld\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mikew\\AppData\\Roaming\\NuGet\\NuGet.Config"
