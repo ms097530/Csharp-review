@@ -6,14 +6,27 @@ namespace Methods
     {
         static void Main(string[] args)
         {
-            GetSum();
+            DateTime startTime = DateTime.Now;
+            Console.WriteLine(startTime);
+            // pass in newly initialized anonymous array of ints
+            Console.WriteLine(GetSum(new int[] { 1, 2, 3, 4, 5 }));
+
+            Console.WriteLine(DateTime.Now - startTime);
         }
 
         // * static methods can only be called in static methods -- Main needs to be static, so make this static too
-        static private int GetSum()
+        static private int GetSum(int[] nums)
         {
-            Console.WriteLine("Hello");
-            return 69;
+            int total = 0;
+            // foreach (int num in nums)
+            // {
+            //     total += num;
+            // }
+            for (int i = 0; i < nums.Length; ++i)
+            {
+                total += nums[i];
+            }
+            return total;
         }
     }
 }
