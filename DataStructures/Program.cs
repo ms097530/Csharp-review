@@ -46,6 +46,24 @@ namespace DataStructures
             // added element filled up empty space first
             Console.WriteLine(myGroceryList[5]);
 
+            // * -------- IENUMERABLE --------
+
+            // ? can not access element by index in IEnumerable
+            // ? can not initialize IEnumerable on its own - use enumerable collection
+            IEnumerable<int> myGroceryIEnumerable = myGroceryList;
+
+            Console.WriteLine(myGroceryIEnumerable.First());
+            Console.WriteLine(myGroceryIEnumerable.ToString());
+
+            // * -------- 2D ARRAYS --------
+
+            // initializing multi-dimensional array
+            int[,] my2DArray = new int[,] {
+                {1,2,3},
+                {4,5,6}
+            };
+            // accessing element in multi-dimensional array
+            Console.WriteLine(my2DArray[0, 2]);
         }
     }
 }
