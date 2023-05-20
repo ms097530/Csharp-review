@@ -4,8 +4,17 @@ namespace Methods
 {
     internal class Program
     {
+        // *  this variable is accessible in everything within Program - needs to be static to be accessible in static methods
+        // ? this is a member variable
+        static int ACCESSIBLE_INT = 69;
+
+        // *  ! static methods can only access static attributes ! *
         static void Main(string[] args)
         {
+            // Console.WriteLine(ACCESSIBLE_INT);
+            // ? declaring this seems to completely invalidate even previous use of same-named variable
+            // int ACCESSIBLE_INT = 420;
+
             DateTime startTime = DateTime.Now;
             Console.WriteLine(startTime);
             // pass in newly initialized anonymous array of ints
