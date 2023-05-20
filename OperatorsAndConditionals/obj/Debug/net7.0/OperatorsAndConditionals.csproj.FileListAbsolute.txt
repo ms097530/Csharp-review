@@ -1,0 +1,15 @@
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\bin\Debug\net7.0\OperatorsAndConditionals.exe
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\bin\Debug\net7.0\OperatorsAndConditionals.deps.json
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\bin\Debug\net7.0\OperatorsAndConditionals.runtimeconfig.json
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\bin\Debug\net7.0\OperatorsAndConditionals.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\bin\Debug\net7.0\OperatorsAndConditionals.pdb
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.csproj.AssemblyReference.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.AssemblyInfoInputs.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.AssemblyInfo.cs
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.csproj.CoreCompileInputs.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\refint\OperatorsAndConditionals.dll
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.pdb
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\OperatorsAndConditionals.genruntimeconfig.cache
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\OperatorsAndConditionals\obj\Debug\net7.0\ref\OperatorsAndConditionals.dll
