@@ -34,11 +34,17 @@ namespace DataStructures
 
             // * -------- LISTS --------
 
-            List<int> myGroceryList = new List<int>(69);
+            // create list of capacity 69 with 3 initialized elements
+            List<int> myGroceryList = new List<int>() { 69, 28, 31, 11, 12 };
             // number of items inside
             System.Console.WriteLine(myGroceryList.Count);
             // number of POSSIBLE items inside
             System.Console.WriteLine(myGroceryList.Capacity);
+
+            myGroceryList.Add(8008);
+
+            // added element filled up empty space first
+            Console.WriteLine(myGroceryList[5]);
 
         }
     }
