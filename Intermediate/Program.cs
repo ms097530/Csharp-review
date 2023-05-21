@@ -11,7 +11,8 @@ namespace Intermediate
         static void Main(string[] args)
         {
             // TrustServerCertificate is true for local machine because we can't get actual certificate but we can trust it
-            string connectionString = "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=true;";
+            string connectionString =
+                "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=true;";
 
             // IDbConnection from System.Data
             // SqlConnection from Microsoft.Data.SqlClient
@@ -36,9 +37,28 @@ namespace Intermediate
                 VideoCard = "RTX 2060"
             };
 
-            Console.WriteLine(myComputer.Motherboard);
+            string sql =
+                @"INSERT INTO TutorialAppSchema.Computer (
+                Motherboard,
+                HasWifi,
+                HasLTE,
+                ReleaseDate,
+                Price,
+                VideoCard
+            ) VALUES ('"
+                + myComputer.Motherboard
+                + "','" + myComputer.HasWifi
+                + "','" + myComputer.HasLTE
+                + "','" + myComputer.ReleaseDate
+                + "','" + myComputer.Price
+                + "','" + myComputer.VideoCard
+                + "')";
 
-            Console.WriteLine("end of file");
+            dbConnection.Execute(sql);
+
+            // Console.WriteLine(myComputer.Motherboard);
+
+            // Console.WriteLine("end of file");
         }
     }
 }
