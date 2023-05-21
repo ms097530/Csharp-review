@@ -69,3 +69,4 @@ C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\Intermediate\
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\Intermediate\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\Intermediate\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\Intermediate\bin\Debug\net7.0\appsettings.json
+C:\Users\mikew\Documents\Coding\C# and .NET\COURSE\C# Crash Course\Intermediate\bin\Debug\net7.0\Newtonsoft.Json.dll
