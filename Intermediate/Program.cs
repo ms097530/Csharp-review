@@ -1,49 +1,31 @@
-﻿using System;
+﻿using System.Data;
+using System;
+using Intermediate.Models;
+using Microsoft.Data.SqlClient;
+using Dapper;
 
 namespace Intermediate
 {
-    public class Computer
-    {
-        // best practice to make fields is to do the following:
-        // field
-        // private string _motherboard;
-        // field accessed and manipulated by property
-        // private string Motherboard {get {return _motherboard;} set {_motherboard = value;}}
-        // * OR have shortcut of this:
-        public string Motherboard { get; set; }
-        public string VideoCard { get; set; }
-        public int CPUCores { get; set; }
-        public bool HasWifi { get; set; }
-        public bool HasLTE { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public decimal Price { get; set; }
-
-        // needs to be public to access
-        public Computer()
-        {
-            if (VideoCard == null)
-            {
-                VideoCard = "";
-            }
-            if (Motherboard == null)
-            {
-                Motherboard = "";
-            }
-        }
-
-        // ! BELOW ARE PUBLIC FIELDS - these go against best practice
-        // public string Motherboard;
-        // public string VideoCard;
-        // public int CPUCores;
-        // public bool HasWifi, HasLTE;
-        // public DateTime ReleaseDate;
-        // public decimal Price;
-    }
-
     internal class Program
     {
         static void Main(string[] args)
         {
+            // TrustServerCertificate is true for local machine because we can't get actual certificate but we can trust it
+            string connectionString = "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=true;";
+
+            // IDbConnection from System.Data
+            // SqlConnection from Microsoft.Data.SqlClient
+            IDbConnection dbConnection = new SqlConnection(connectionString);
+
+            string sqlCommand = "SELECT GETDATE()";
+
+            // Query from Dapper
+            // Query will return array of results
+            // QuerySingle returns one result
+            DateTime rightNow = dbConnection.QuerySingle<DateTime>(sqlCommand);
+
+            Console.WriteLine(rightNow);
+
             Computer myComputer = new Computer()
             {
                 Motherboard = "Z690",
