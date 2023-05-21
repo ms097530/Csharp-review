@@ -12,6 +12,7 @@ namespace Intermediate
     {
         static void Main(string[] args)
         {
+            // gives access to this file - could do similarly for other files or settings
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .Build();
