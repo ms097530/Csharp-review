@@ -99,12 +99,12 @@ namespace Intermediate
                         ReleaseDate,
                         Price,
                         VideoCard
-                    ) VALUES ('" + computer.Motherboard
+                    ) VALUES ('" + EscapeSingleQuote(computer.Motherboard)
                         + "','" + computer.HasWifi
                         + "','" + computer.HasLTE
                         + "','" + computer.ReleaseDate
                         + "','" + computer.Price
-                        + "','" + computer.VideoCard
+                        + "','" + EscapeSingleQuote(computer.VideoCard)
                         + "')";
 
                     dapper.ExecuteSql(sql);
@@ -126,6 +126,15 @@ namespace Intermediate
             // * without settings, will not be serialized back to camelcase
             string computersCopy = JsonConvert.SerializeObject(computers, settings);
             File.WriteAllText("computersCopyNewtonsoft.txt", computersCopy);
+        }
+
+        static string EscapeSingleQuote(string input)
+        {
+            // * replace individual single quote with two single quotes
+            // ? causes issue due to SQL syntax
+            string output = input.Replace("'", "''");
+
+            return output;
         }
     }
 }
