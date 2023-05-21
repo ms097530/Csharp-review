@@ -5,6 +5,7 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using Intermediate.Data;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 
 namespace Intermediate
 {
@@ -12,6 +13,11 @@ namespace Intermediate
     {
         static void Main(string[] args)
         {
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            DataContextDapper dapper = new DataContextDapper(config);
 
             Computer myComputer = new Computer()
             {
@@ -45,16 +51,40 @@ namespace Intermediate
             // * File gets overwritten by default
             // File.WriteAllText("log.txt", sql);
 
-            using StreamWriter openFile = new("log.txt", append: true);
+            // using StreamWriter openFile = new("log.txt", append: true);
 
-            openFile.WriteLine(sql + "\n");
+            // openFile.WriteLine(sql + "\n");
 
-            // can't read unless writing is done
-            openFile.Close();
+            // // can't read unless writing is done
+            // openFile.Close();
 
-            string fileText = File.ReadAllText("log.txt");
+            // string fileText = File.ReadAllText("log.txt");
 
-            Console.WriteLine(fileText);
+            // Console.WriteLine(fileText);
+
+            // * stored in string as is, can't access key-value pairs or access like model
+            string computersJson = File.ReadAllText("Computers.json");
+
+            // Console.WriteLine(computersJson);
+
+            // * maps 1 to 1 by default, change naming policy
+            // * i.e. default: in file property = motherboard, looks to map to model as motherboard (rather than Motherboard)
+            JsonSerializerOptions options = new JsonSerializerOptions()
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
+            // * try to deserialize JSON that got converted to string
+            IEnumerable<Computer>? computers = JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson, options);
+
+            if (computers != null)
+            {
+                foreach (Computer computer in computers)
+                {
+                    // outputting blanks for Motherboard because deserializer isn't returning Pascal-casing by default, it is trying to map 1 to 1
+                    Console.WriteLine(computer.Motherboard);
+                }
+            }
         }
     }
 }
