@@ -40,7 +40,21 @@ namespace Intermediate
                 + "','" + myComputer.VideoCard
                 + "')";
 
+            // write SQL command to file
+            // ? If file already exists, what will happen?
+            // * File gets overwritten by default
+            // File.WriteAllText("log.txt", sql);
 
+            using StreamWriter openFile = new("log.txt", append: true);
+
+            openFile.WriteLine(sql + "\n");
+
+            // can't read unless writing is done
+            openFile.Close();
+
+            string fileText = File.ReadAllText("log.txt");
+
+            Console.WriteLine(fileText);
         }
     }
 }
