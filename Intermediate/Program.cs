@@ -70,7 +70,18 @@ namespace Intermediate
 
             Mapper mapper = new Mapper(new MapperConfiguration((cfg) =>
             {
-
+                // * first generic should be SOURCE model and second should be DESTINATION model
+                // * by default will map fields 1 to 1
+                // * need to setup how properties will be mapped
+                cfg.CreateMap<ComputerSnake, Computer>()
+                    .ForMember(destination => destination.ComputerId, options => options.MapFrom(source => source.computer_id))
+                    .ForMember(destination => destination.CPUCores, options => options.MapFrom(source => source.cpu_cores))
+                    .ForMember(destination => destination.HasLTE, options => options.MapFrom(source => source.has_lte))
+                    .ForMember(destination => destination.HasWifi, options => options.MapFrom(source => source.has_wifi))
+                    .ForMember(destination => destination.Motherboard, options => options.MapFrom(source => source.motherboard))
+                    .ForMember(destination => destination.VideoCard, options => options.MapFrom(source => source.video_card))
+                    .ForMember(destination => destination.ReleaseDate, options => options.MapFrom(source => source.release_date))
+                    .ForMember(destination => destination.Price, options => options.MapFrom(source => source.price));
             }));
 
             // // Console.WriteLine(computersJson);
