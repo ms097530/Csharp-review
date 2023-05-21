@@ -99,6 +99,8 @@ namespace Intermediate
             IEnumerable<Computer>? computersSystemJsonPropertyMapping = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson);
             if (computersSystemJsonPropertyMapping != null)
             {
+                Console.WriteLine("----- JSON PROPERTY MAPPING -----");
+
                 // * JSON property name attributes should handle mapping without explicit need to do so
                 foreach (Computer computer in computersSystemJsonPropertyMapping)
                 {
@@ -108,18 +110,18 @@ namespace Intermediate
 
 
             // * duplicate to work with mapping
-            // IEnumerable<ComputerSnake>? computersSystem = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<ComputerSnake>>(computersJson);
+            IEnumerable<ComputerSnake>? computersSystem = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<ComputerSnake>>(computersJson);
 
-            // if (computersSystem != null)
-            // {
-            //     IEnumerable<Computer> computerResult = mapper.Map<IEnumerable<Computer>>(computersSystem);
-
-            // output Motherboard field from resulting mapped Computers from file with snake-cased JSON
-            //     foreach (Computer computer in computerResult)
-            //     {
-            //         Console.WriteLine(computer.Motherboard);
-            //     }
-            // }
+            if (computersSystem != null)
+            {
+                IEnumerable<Computer> computerResult = mapper.Map<IEnumerable<Computer>>(computersSystem);
+                Console.WriteLine("----- AUTOMAPPER -----");
+                // output Motherboard field from resulting mapped Computers from file with snake-cased JSON
+                foreach (Computer computer in computerResult)
+                {
+                    Console.WriteLine(computer.Motherboard);
+                }
+            }
 
             // * --- NEWTONSOFT
             // * basically same thing but with Newtonsoft JSON
