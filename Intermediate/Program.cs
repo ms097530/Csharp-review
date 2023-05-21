@@ -50,8 +50,8 @@ namespace Intermediate
                 + "','" + myComputer.VideoCard
                 + "')";
 
-            // returns number of rows affected after executing command - using Dapper
-            int result = dapper.ExecuteSqlWithRowCount(sql);
+            // returns whether the executed sql affected anything
+            bool result = dapper.ExecuteSql(sql);
 
             Console.WriteLine(result);
 
