@@ -96,20 +96,30 @@ namespace Intermediate
             // };
 
             // * try to deserialize JSON that got converted to string
-            // IEnumerable<Computer>? computersSystem = JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson, options);
-            // * duplicate to work with mapping
-            IEnumerable<ComputerSnake>? computersSystem = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<ComputerSnake>>(computersJson);
-
-            if (computersSystem != null)
+            IEnumerable<Computer>? computersSystemJsonPropertyMapping = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson);
+            if (computersSystemJsonPropertyMapping != null)
             {
-                IEnumerable<Computer> computerResult = mapper.Map<IEnumerable<Computer>>(computersSystem);
-
-                // output Motherboard field from resulting mapped Computers from file with snake-cased JSON
-                foreach (Computer computer in computerResult)
+                // * JSON property name attributes should handle mapping without explicit need to do so
+                foreach (Computer computer in computersSystemJsonPropertyMapping)
                 {
                     Console.WriteLine(computer.Motherboard);
                 }
             }
+
+
+            // * duplicate to work with mapping
+            // IEnumerable<ComputerSnake>? computersSystem = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<ComputerSnake>>(computersJson);
+
+            // if (computersSystem != null)
+            // {
+            //     IEnumerable<Computer> computerResult = mapper.Map<IEnumerable<Computer>>(computersSystem);
+
+            // output Motherboard field from resulting mapped Computers from file with snake-cased JSON
+            //     foreach (Computer computer in computerResult)
+            //     {
+            //         Console.WriteLine(computer.Motherboard);
+            //     }
+            // }
 
             // * --- NEWTONSOFT
             // * basically same thing but with Newtonsoft JSON
