@@ -24,7 +24,10 @@ namespace Intermediate.Data
         {
             // ? set default schema instead of doing as commented out below
             modelBuilder.HasDefaultSchema("TutorialAppSchema");
-            modelBuilder.Entity<Computer>();
+            modelBuilder.Entity<Computer>()
+            // call this to make it keyless
+            // .HasNoKey();
+            .HasKey(c => c.ComputerId);
             // name of table, then name of schema
             // i.e. in DB, we have TutorialAppSchema.Computer
             // my default uses DBO (?) schema, so need to specify

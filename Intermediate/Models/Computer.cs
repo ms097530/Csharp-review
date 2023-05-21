@@ -2,6 +2,7 @@ namespace Intermediate.Models
 {
     public class Computer
     {
+        public int ComputerId { get; set; }
         // best practice to make fields is to do the following:
         // field
         // private string _motherboard;
@@ -11,7 +12,8 @@ namespace Intermediate.Models
         // ? using shortcuts to set default values as well
         public string Motherboard { get; set; } = "";
         public string VideoCard { get; set; } = "";
-        public int CPUCores { get; set; }
+        // to overcome SqlNullValueException: Data is Null (need to make data nullable since we weren't providing it, or assign a default value - did both)
+        public int? CPUCores { get; set; } = 0;
         public bool HasWifi { get; set; }
         public bool HasLTE { get; set; }
         public DateTime ReleaseDate { get; set; }

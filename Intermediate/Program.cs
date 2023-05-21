@@ -12,6 +12,7 @@ namespace Intermediate
         static void Main(string[] args)
         {
             DataContextDapper dapper = new DataContextDapper();
+            DataContextEF entityFramework = new DataContextEF();
 
             string sqlCommand = "SELECT GETDATE()";
 
@@ -32,6 +33,10 @@ namespace Intermediate
                 Price = 943.87m,
                 VideoCard = "RTX 2060"
             };
+
+            // accomplishes same thing as below SQL statement being executed
+            entityFramework.Add(myComputer);
+            entityFramework.SaveChanges();
 
             string sql =
                 @"INSERT INTO TutorialAppSchema.Computer (
@@ -55,23 +60,23 @@ namespace Intermediate
 
             Console.WriteLine(result);
 
-            string sqlSelect = @"SELECT 
-                Motherboard,
-                HasWifi,
-                HasLTE,
-                ReleaseDate,
-                Price,
-                VideoCard
+            string sqlSelect = @"SELECT
+                Computer.ComputerId, 
+                Computer.Motherboard,
+                Computer.HasWifi,
+                Computer.HasLTE,
+                Computer.ReleaseDate,
+                Computer.Price,
+                Computer.VideoCard
              FROM TutorialAppSchema.Computer";
 
             // returns IEnumerable of type we used
             // could convert to List by adding ToList() method at the end
             IEnumerable<Computer> computers = dapper.LoadData<Computer>(sqlSelect);
-
             foreach (Computer computer in computers)
             {
-                Console.WriteLine("'"
-                + computer.Motherboard
+                Console.WriteLine("'" + computer.ComputerId
+                + "','" + computer.Motherboard
                 + "','" + computer.HasWifi
                 + "','" + computer.HasLTE
                 + "','" + computer.ReleaseDate
@@ -79,6 +84,23 @@ namespace Intermediate
                 + "','" + computer.VideoCard
                 + "')");
             }
+
+            IEnumerable<Computer>? computersEf = entityFramework.Computer?.ToList<Computer>();
+            if (computersEf != null)
+            {
+                foreach (Computer computer in computersEf)
+                {
+                    Console.WriteLine("'" + computer.ComputerId
+                    + "','" + computer.Motherboard
+                    + "','" + computer.HasWifi
+                    + "','" + computer.HasLTE
+                    + "','" + computer.ReleaseDate
+                    + "','" + computer.Price
+                    + "','" + computer.VideoCard
+                    + "')");
+                }
+            }
+
 
             // Console.WriteLine(myComputer.Motherboard);
 
