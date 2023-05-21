@@ -1,14 +1,23 @@
 using System.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace Intermediate.Data
 {
     public class DataContextDapper
     {
+        // private IConfiguration _config;
+        // * added ? and ="" to get rid of warning about possible null reference assignment - differs from provided code
+        private string? _connectionString = "";
+        // set configuration to be the same as passed in configuration
+        public DataContextDapper(IConfiguration config)
+        {
+            // _config = config;
+            _connectionString = config.GetConnectionString("DefaultConnection");
+        }
+
         // TrustServerCertificate is true for local machine because we can't get actual certificate but we can trust it
-        private string _connectionString =
-            "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=true;";
 
         public IEnumerable<T> LoadData<T>(string sql)
         {

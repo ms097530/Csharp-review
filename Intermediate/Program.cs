@@ -4,6 +4,7 @@ using Intermediate.Models;
 using Microsoft.Data.SqlClient;
 using Dapper;
 using Intermediate.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace Intermediate
 {
@@ -11,8 +12,12 @@ namespace Intermediate
     {
         static void Main(string[] args)
         {
-            DataContextDapper dapper = new DataContextDapper();
-            DataContextEF entityFramework = new DataContextEF();
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            DataContextDapper dapper = new DataContextDapper(config);
+            DataContextEF entityFramework = new DataContextEF(config);
 
             string sqlCommand = "SELECT GETDATE()";
 
