@@ -49,7 +49,7 @@
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Launch OPSandCONDS",
+            "name": ".NET Core Launch Intermediate",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build4",
