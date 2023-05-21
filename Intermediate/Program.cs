@@ -54,7 +54,35 @@ namespace Intermediate
                 + "','" + myComputer.VideoCard
                 + "')";
 
-            dbConnection.Execute(sql);
+            // returns number of rows affected after executing command - using Dapper
+            int result = dbConnection.Execute(sql);
+
+            Console.WriteLine(result);
+
+            string sqlSelect = @"SELECT 
+                Motherboard,
+                HasWifi,
+                HasLTE,
+                ReleaseDate,
+                Price,
+                VideoCard
+             FROM TutorialAppSchema.Computer";
+
+            // returns IEnumerable of type we used
+            // could convert to List by adding ToList() method at the end
+            IEnumerable<Computer> computers = dbConnection.Query<Computer>(sqlSelect);
+
+            foreach (Computer computer in computers)
+            {
+                Console.WriteLine("'"
+                + computer.Motherboard
+                + "','" + computer.HasWifi
+                + "','" + computer.HasLTE
+                + "','" + computer.ReleaseDate
+                + "','" + computer.Price
+                + "','" + computer.VideoCard
+                + "')");
+            }
 
             // Console.WriteLine(myComputer.Motherboard);
 
