@@ -131,7 +131,7 @@ namespace Intermediate
         static string EscapeSingleQuote(string input)
         {
             // * replace individual single quote with two single quotes
-            // ? causes issue due to SQL syntax
+            // ? causes issue due to SQL syntax - similar to escaping using backslashes or other characters
             string output = input.Replace("'", "''");
 
             return output;
