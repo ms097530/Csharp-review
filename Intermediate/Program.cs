@@ -3,6 +3,7 @@ using System;
 using Intermediate.Models;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Intermediate.Data;
 
 namespace Intermediate
 {
@@ -10,20 +11,15 @@ namespace Intermediate
     {
         static void Main(string[] args)
         {
-            // TrustServerCertificate is true for local machine because we can't get actual certificate but we can trust it
-            string connectionString =
-                "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=true;";
-
-            // IDbConnection from System.Data
-            // SqlConnection from Microsoft.Data.SqlClient
-            IDbConnection dbConnection = new SqlConnection(connectionString);
+            DataContextDapper dapper = new DataContextDapper();
 
             string sqlCommand = "SELECT GETDATE()";
 
             // Query from Dapper
             // Query will return array of results
             // QuerySingle returns one result
-            DateTime rightNow = dbConnection.QuerySingle<DateTime>(sqlCommand);
+            // DateTime rightNow = dbConnection.QuerySingle<DateTime>(sqlCommand);
+            DateTime rightNow = dapper.LoadDataSingle<DateTime>(sqlCommand);
 
             Console.WriteLine(rightNow);
 
@@ -55,7 +51,7 @@ namespace Intermediate
                 + "')";
 
             // returns number of rows affected after executing command - using Dapper
-            int result = dbConnection.Execute(sql);
+            int result = dapper.ExecuteSqlWithRowCount(sql);
 
             Console.WriteLine(result);
 
@@ -70,7 +66,7 @@ namespace Intermediate
 
             // returns IEnumerable of type we used
             // could convert to List by adding ToList() method at the end
-            IEnumerable<Computer> computers = dbConnection.Query<Computer>(sqlSelect);
+            IEnumerable<Computer> computers = dapper.LoadData<Computer>(sqlSelect);
 
             foreach (Computer computer in computers)
             {
